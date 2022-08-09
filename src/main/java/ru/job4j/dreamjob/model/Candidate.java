@@ -22,6 +22,11 @@ public class Candidate {
         this.created = created;
     }
 
+    public Candidate(int id, String desc) {
+        this.id = id;
+        this.desc = desc;
+    }
+
 
     public int getId() {
         return id;
