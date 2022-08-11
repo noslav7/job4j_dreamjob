@@ -27,7 +27,7 @@ public class PostStore {
         return posts.values();
     }
 
-    public static void add(Post post) {
+    public void add(Post post) {
         store.addAndGet(post.getId());
     }
 }

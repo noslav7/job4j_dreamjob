@@ -26,7 +26,7 @@ public class PostController {
 
     @PostMapping("/createPost")
     public String createPost(@ModelAttribute Post post) {
-        PostStore.add(post);
+        store.add(post);
         return "redirect:/posts";
     }
 }
