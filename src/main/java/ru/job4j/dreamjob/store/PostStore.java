@@ -28,7 +28,7 @@ public class PostStore {
     }
 
     public void add(Post post) {
-        post.setId(store.addAndGet(3));
+        post.setId(store.incrementAndGet() + 2);
         posts.put(post.getId(), post);
     }
 }
