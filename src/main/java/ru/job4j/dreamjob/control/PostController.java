@@ -33,7 +33,7 @@ public class PostController {
 
     @PostMapping("/createPost")
     public String createPost(@ModelAttribute Post post) {
-        store.create(post);
+        store.add(post);
         return "redirect:/posts";
     }
 }
