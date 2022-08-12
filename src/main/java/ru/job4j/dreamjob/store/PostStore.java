@@ -32,8 +32,8 @@ public class PostStore {
         posts.put(post.getId(), post);
     }
 
-    public Post create(Post post) {
-    return new Post(post.getId(), post.getName(), post.getDescription(), post.getCreated());
+    public void create(Post post) {
+        add(post);
     }
 
     public void update(Post post) {
