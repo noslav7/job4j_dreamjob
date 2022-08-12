@@ -33,7 +33,7 @@ public class PostStore {
     }
 
     public Post create(Post post) {
-    return new Post(post.getId(), post.getName(), post.getDescription(), post.getCreated());
+    return post;
     }
 
     public void update(Post post) {
