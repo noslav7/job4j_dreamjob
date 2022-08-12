@@ -31,4 +31,12 @@ public class PostStore {
         post.setId(store.incrementAndGet());
         posts.put(post.getId(), post);
     }
+
+    public void create(Post post) {
+    new Post(post.getId(), post.getName(), post.getDescription(), post.getCreated());
+    }
+
+    public void update(Post post) {
+    posts.put(post.getId(), post);
+    }
 }
