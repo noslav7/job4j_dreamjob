@@ -33,7 +33,7 @@ public class CandidateStore {
         candidates.put(candidate.getId(), candidate);
     }
 
-    public void updateCandidate(Candidate candidate) {
+    public void update(Candidate candidate) {
         candidates.replace(candidate.getId(), candidate);
     }
 }

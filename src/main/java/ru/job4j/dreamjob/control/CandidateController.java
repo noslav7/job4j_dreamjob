@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.job4j.dreamjob.model.Candidate;
-import ru.job4j.dreamjob.model.Post;
 import ru.job4j.dreamjob.store.CandidateStore;
 
 @Controller
@@ -25,9 +24,9 @@ public class CandidateController {
         return "addCandidate";
     }
 
-    @PostMapping("/updatePost")
+    @PostMapping("/updateCandidate")
     public String updateCandidate(@ModelAttribute Candidate candidate) {
-        store.updateCandidate(candidate);
+        store.update(candidate);
         return "redirect:/candidates";
     }
 
@@ -36,6 +35,4 @@ public class CandidateController {
         store.add(candidate);
         return "redirect:/candidates";
     }
-
-
 }
