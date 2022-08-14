@@ -40,12 +40,6 @@ public class CandidateStore {
     }
 
     public Candidate findById(int id) {
-        Candidate requiredCandidate = null;
-        for (Map.Entry<Integer, Candidate> candidateEntry : candidates.entrySet()) {
-            if (id == candidateEntry.getKey()) {
-                requiredCandidate = candidateEntry.getValue();
-            }
-        }
-        return requiredCandidate;
+        return candidates.get(id);
     }
 }

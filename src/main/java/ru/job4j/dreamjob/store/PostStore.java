@@ -37,12 +37,6 @@ public class PostStore {
     }
 
     public Post findById(int id) {
-        Post requiredPost = null;
-        for (Map.Entry<Integer, Post> postEntry : posts.entrySet()) {
-            if (id == postEntry.getKey()) {
-                requiredPost = postEntry.getValue();
-            }
-        }
-        return requiredPost;
+        return posts.get(id);
     }
 }
