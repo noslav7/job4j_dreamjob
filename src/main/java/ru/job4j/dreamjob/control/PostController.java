@@ -36,4 +36,10 @@ public class PostController {
         store.add(post);
         return "redirect:/posts";
     }
+
+    @GetMapping("/updatePost/{postId}")
+    public String formUpdatePost(Model model, @PathVariable("postId") int id) {
+        model.addAttribute("post", store.findById(id));
+        return "updatePost";
+    }
 }

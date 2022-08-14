@@ -35,4 +35,14 @@ public class PostStore {
     public void update(Post post) {
     posts.replace(post.getId(), post);
     }
+
+    public Post findById(int id) {
+        Post requiredPost = null;
+        for (Map.Entry<Integer, Post> postEntry : posts.entrySet()) {
+            if (id == postEntry.getKey()) {
+                requiredPost = postEntry.getValue();
+            }
+        }
+        return requiredPost;
+    }
 }
