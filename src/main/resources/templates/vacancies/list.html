@@ -18,13 +18,17 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Имя</th>
+                <th scope="col">Position</th>
+                <th scope="col">Description</th>
+                <th scope="col">Created</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="vacancy: ${vacancies}">
-                <td th:text="${vacancy.id}" />
-                <td th:text="${vacancy.title}" />
+                <td th:text="${vacancy.id}"></td>
+                <td th:text="${vacancy.title}"></td>
+                <td th:text="${vacancy.description}"></td>
+                <td th:text="${vacancy.creationDate}"></td>
             </tr>
             </tbody>
         </table>
