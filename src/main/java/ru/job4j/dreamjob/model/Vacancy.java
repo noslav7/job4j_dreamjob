@@ -12,15 +12,17 @@ public class Vacancy {
     public Vacancy() {
     }
 
-    public Vacancy(int id, String title) {
-        this.id = id;
-        this.title = title;
-    }
-
     public Vacancy(int id, String title, String description) {
         this.id = id;
         this.title = title;
         this.description = description;
+    }
+
+    public Vacancy(int id, String title, String description, LocalDateTime creationDate) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.creationDate = creationDate;
     }
 
     public int getId() {
