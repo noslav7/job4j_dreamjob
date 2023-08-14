@@ -7,15 +7,9 @@ public class Vacancy {
     private int id;
     private String title;
     private String description;
-    private LocalDateTime creationDate = LocalDateTime.now();
+    private LocalDateTime creationDate;
 
     public Vacancy() {
-    }
-
-    public Vacancy(int id, String title, String description) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
     }
 
     public Vacancy(int id, String title, String description, LocalDateTime creationDate) {
