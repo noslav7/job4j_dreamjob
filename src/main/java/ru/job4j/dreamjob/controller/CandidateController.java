@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.job4j.dreamjob.model.Candidate;
+import ru.job4j.dreamjob.model.Vacancy;
 import ru.job4j.dreamjob.repository.CandidateRepository;
 import ru.job4j.dreamjob.repository.MemoryCandidateRepository;
 
@@ -22,6 +23,12 @@ public class CandidateController {
     @GetMapping("/create")
     public String getCreationPage() {
         return "candidates/create";
+    }
+
+    @PostMapping("/create")
+    public String create(@ModelAttribute Candidate candidate) {
+        candidateRepository.save(candidate);
+        return "redirect:/vacancies";
     }
 
     @GetMapping("/{id}")
