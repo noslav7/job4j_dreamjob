@@ -24,7 +24,6 @@ public class Candidate {
         this.creationDate = creationDate;
     }
 
-
     public int getId() {
         return id;
     }
