@@ -18,17 +18,17 @@ public class MemoryCandidateRepository implements CandidateRepository {
 
     private MemoryCandidateRepository() {
         save(new Candidate(0, "Иванов Иван Иванович",
-                "Trainee candidate", LocalDateTime.now()));
+                "Trainee candidate"));
         save(new Candidate(0, "Сергеев Сергей Сергеевич",
-                "Junior candidate", LocalDateTime.now()));
+                "Junior candidate"));
         save(new Candidate(0, "Семенов Семен Семенович",
-                "Junior+ candidate", LocalDateTime.now()));
+                "Junior+ candidate"));
         save(new Candidate(0, "Алексеев Алексей Алексеевич",
-                "Middle candidate", LocalDateTime.now()));
+                "Middle candidate"));
         save(new Candidate(0, "Ермолин Вадим Александрович",
-                "Middle+ candidate", LocalDateTime.now()));
+                "Middle+ candidate"));
         save(new Candidate(0, "Арсентьев Петр Сергеевич",
-                "Senior candidate", LocalDateTime.now()));
+                "Senior candidate"));
     }
 
     public static MemoryCandidateRepository getInstance() {

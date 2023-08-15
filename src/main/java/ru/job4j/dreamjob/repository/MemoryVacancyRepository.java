@@ -18,17 +18,17 @@ public class MemoryVacancyRepository implements VacancyRepository {
 
     private MemoryVacancyRepository() {
         save(new Vacancy(0, "Intern Java Developer",
-                "Studies coding", LocalDateTime.now()));
+                "Studies coding"));
         save(new Vacancy(0, "Junior Java Developer",
-                "Completes tasks", LocalDateTime.now()));
+                "Completes tasks"));
         save(new Vacancy(0, "Junior+ Java Developer",
-                "Completes tasks", LocalDateTime.now()));
+                "Completes tasks"));
         save(new Vacancy(0, "Middle Java Developer",
-                "Develops projects", LocalDateTime.now()));
+                "Develops projects"));
         save(new Vacancy(0, "Middle+ Java Developer",
-                "Develops projects", LocalDateTime.now()));
+                "Develops projects"));
         save(new Vacancy(0, "Senior Java Developer",
-                "Solves problems", LocalDateTime.now()));
+                "Solves problems"));
     }
 
     public static MemoryVacancyRepository getInstance() {
@@ -51,7 +51,7 @@ public class MemoryVacancyRepository implements VacancyRepository {
     public boolean update(Vacancy vacancy) {
         return vacancies.computeIfPresent(vacancy.getId(), (id, oldVacancy) ->
                 new Vacancy(oldVacancy.getId(), vacancy.getTitle(),
-                        vacancy.getDescription(), vacancy.getCreationDate())) != null;
+                        vacancy.getDescription(), oldVacancy.getCreationDate())) != null;
     }
 
     @Override
