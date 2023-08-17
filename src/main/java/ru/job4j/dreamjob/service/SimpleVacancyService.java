@@ -7,16 +7,16 @@ import ru.job4j.dreamjob.repository.VacancyRepository;
 import java.util.Collection;
 import java.util.Optional;
 
-public class SimpleVacancyRepository implements VacancyRepository {
+public class SimpleVacancyService implements VacancyRepository {
 
-    private static final SimpleVacancyRepository INSTANCE = new SimpleVacancyRepository();
+    private static final SimpleVacancyService INSTANCE = new SimpleVacancyService();
 
     private final VacancyRepository vacancyRepository = MemoryVacancyRepository.getInstance();
 
-    private SimpleVacancyRepository() {
+    private SimpleVacancyService() {
     }
 
-    public static SimpleVacancyRepository getInstance() {
+    public static SimpleVacancyService getInstance() {
         return INSTANCE;
     }
 
