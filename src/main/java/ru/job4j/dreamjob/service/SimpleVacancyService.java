@@ -10,13 +10,11 @@ import java.util.Optional;
 
 @Service
 public class SimpleVacancyService implements VacancyService {
-
     private final VacancyRepository vacancyRepository;
 
     public SimpleVacancyService(VacancyRepository vacancyRepository) {
         this.vacancyRepository = vacancyRepository;
     }
-
 
     @Override
     public Vacancy save(Vacancy vacancy) {
