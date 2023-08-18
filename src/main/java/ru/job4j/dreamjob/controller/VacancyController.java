@@ -64,11 +64,14 @@ public class VacancyController {
     }
 
     @PostMapping("/update")
-    public String update(@ModelAttribute Vacancy vacancy, @RequestParam MultipartFile file, Model model) {
+    public String update(@ModelAttribute Vacancy vacancy,
+                         @RequestParam MultipartFile file, Model model) {
         try {
-            var isUpdated = vacancyService.update(vacancy, new FileDto(file.getOriginalFilename(), file.getBytes()));
+            var isUpdated = vacancyService.update(vacancy,
+                    new FileDto(file.getOriginalFilename(), file.getBytes()));
             if (!isUpdated) {
-                model.addAttribute("message", "Вакансия с указанным идентификатором не найдена");
+                model.addAttribute("message",
+                        "Вакансия с указанным идентификатором не найдена");
                 return "errors/404";
             }
             return "redirect:/vacancies";
