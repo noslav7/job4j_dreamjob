@@ -26,7 +26,8 @@ public class Vacancy {
         this.creationDate = creationDate;
     }
 
-    public Vacancy(int id, String title, String description, LocalDateTime creationDate, boolean visible) {
+    public Vacancy(int id, String title, String description,
+                   LocalDateTime creationDate, boolean visible) {
         this.id = id;
         this.title = title;
         this.description = description;
