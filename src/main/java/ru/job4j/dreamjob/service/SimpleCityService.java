@@ -10,8 +10,8 @@ import java.util.Collection;
 public class SimpleCityService implements CityService {
     private final CityRepository cityRepository;
 
-    public SimpleCityService(CityRepository cityRepository) {
-        this.cityRepository = cityRepository;
+    public SimpleCityService(CityRepository sql2oCityRepository) {
+        this.cityRepository = sql2oCityRepository;
     }
 
     @Override
