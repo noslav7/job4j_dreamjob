@@ -33,7 +33,7 @@ public class CandidateController {
 
     @GetMapping("/create")
     public String getCreationPage(Model model) {
-        model.addAttribute("candidates", cityService.findAll());
+        model.addAttribute("cities", cityService.findAll());
         return "candidates/create";
     }
 
@@ -43,7 +43,7 @@ public class CandidateController {
         try {
             candidateService.save(candidate,
                     new FileDto(file.getOriginalFilename(), file.getBytes()));
-            return "redirect:/vacancies";
+            return "redirect:/candidates";
         } catch (Exception exception) {
             model.addAttribute("message", exception.getMessage());
             return "errors/404";
