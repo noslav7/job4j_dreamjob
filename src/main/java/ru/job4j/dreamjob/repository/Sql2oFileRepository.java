@@ -44,6 +44,6 @@ public class Sql2oFileRepository implements FileRepository {
             var query = connection.createQuery("DELETE FROM files WHERE id = :id");
             query.addParameter("id", id).executeUpdate();
         }
-        return true;
+        return false;
     }
 }
