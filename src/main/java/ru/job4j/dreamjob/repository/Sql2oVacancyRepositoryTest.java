@@ -113,7 +113,9 @@ public class Sql2oVacancyRepositoryTest {
     @Test
     public void whenUpdateThenGetUpdated() {
         var creationDate = now().truncatedTo(ChronoUnit.MINUTES);
-        var vacancy = sql2oVacancyRepository.save(new Vacancy(0, "title", "description", creationDate, true, 1, file.getId()));
+        var vacancy = sql2oVacancyRepository.save(new Vacancy(
+                0, "title", "description",
+                creationDate, true, 1, file.getId()));
         var updatedVacancy = new Vacancy(
                 vacancy.getId(), "new title", "new description", creationDate.plusDays(1),
                 !vacancy.getVisible(), 1, file.getId()
