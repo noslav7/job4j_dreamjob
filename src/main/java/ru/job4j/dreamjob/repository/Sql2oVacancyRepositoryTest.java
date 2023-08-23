@@ -109,7 +109,6 @@ public class Sql2oVacancyRepositoryTest {
         Random random = new Random();
         int randomIndex = random.nextInt();
         sql2oVacancyRepository.deleteById(randomIndex);
-        Optional<Vacancy> emptyOptional = Optional.empty();
         assertThat(!sql2oVacancyRepository.findById(randomIndex).equals(empty()));
     }
 
