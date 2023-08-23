@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import ru.job4j.dreamjob.dto.FileDto;
+import ru.job4j.dreamjob.model.User;
 import ru.job4j.dreamjob.model.Vacancy;
 import ru.job4j.dreamjob.service.CityService;
 import ru.job4j.dreamjob.service.SimpleVacancyService;
@@ -87,6 +88,16 @@ public class VacancyController {
         if (!isDeleted) {
             model.addAttribute("message",
                     "Вакансия с указанным идентификатором не найдена");
+            return "errors/404";
+        }
+        return "redirect:/vacancies";
+    }
+
+    @PostMapping("/register")
+    public String register(Model model, @ModelAttribute User user) {
+        var savedUser = userService.save(user);
+        if (savedUser.isEmpty()) {
+            model.addAttribute("message", "Пользователь с такой почтой уже существует");
             return "errors/404";
         }
         return "redirect:/vacancies";
