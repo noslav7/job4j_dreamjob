@@ -77,7 +77,7 @@ public class SimpleFileService implements FileService {
             return false;
         }
         deleteFile(fileOptional.get().getPath());
-        return fileRepository.deleteById(id);
+        return true;
     }
 
     private void deleteFile(String path) {

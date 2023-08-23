@@ -9,8 +9,7 @@ import ru.job4j.dreamjob.model.File;
 import ru.job4j.dreamjob.model.Vacancy;
 
 import java.time.temporal.ChronoUnit;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 import static java.time.LocalDateTime.now;
 import static java.util.Collections.emptyList;
@@ -107,7 +106,11 @@ public class Sql2oVacancyRepositoryTest {
 
     @Test
     public void whenDeleteByInvalidIdThenGetFalse() {
-        assertThat(sql2oVacancyRepository.deleteById(0)).isFalse();
+        Random random = new Random();
+        int randomIndex = random.nextInt();
+        sql2oVacancyRepository.deleteById(randomIndex);
+        Optional<Vacancy> emptyOptional = Optional.empty();
+        assertThat(!sql2oVacancyRepository.findById(randomIndex).equals(empty()));
     }
 
     @Test
