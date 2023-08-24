@@ -106,10 +106,8 @@ public class Sql2oVacancyRepositoryTest {
 
     @Test
     public void whenDeleteByInvalidIdThenGetFalse() {
-        Random random = new Random();
-        int randomIndex = random.nextInt();
-        sql2oVacancyRepository.deleteById(randomIndex);
-        assertThat(!sql2oVacancyRepository.findById(randomIndex).equals(empty()));
+        sql2oVacancyRepository.deleteById(Integer.MAX_VALUE);
+        assertThat(sql2oVacancyRepository.findById(Integer.MAX_VALUE)).isEqualTo(empty());
     }
 
     @Test
