@@ -18,11 +18,8 @@ public class Sql2oUserRepository implements UserRepository {
     public Optional<User> save(User user) {
         try (var connection = sql2o.open()) {
             var sql = """
-                    UPDATE users
-                    SET name = :name,
-                    email = :email,
-                    password = :password
-                    WHERE id = :id
+                    INSERT INTO users(name, email, password)
+                    VALUES (:name, :email, :password)
                     """;
             var query = connection.createQuery(sql)
                     .addParameter("name", user.getName())
@@ -31,6 +28,8 @@ public class Sql2oUserRepository implements UserRepository {
             int generatedId = query.executeUpdate().getKey(Integer.class);
             user.setId(generatedId);
             return Optional.of(user);
+        } catch (IllegalArgumentException iae) {
+            return Optional.empty();
         }
     }
 
