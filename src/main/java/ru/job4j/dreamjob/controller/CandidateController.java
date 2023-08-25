@@ -25,11 +25,25 @@ public class CandidateController {
         this.cityService = cityService;
     }
 
+    /*
+    @GetMapping({"/", "/index"})
+    public String getIndex(Model model, HttpSession session) {
+        var user = (User) session.getAttribute("user");
+        if (user == null) {
+            user = new User();
+            user.setName("Гость");
+        }
+        model.addAttribute("user", user);
+        return "index";
+    }
+     */
+
     @GetMapping
     public String getAll(Model model) {
         model.addAttribute("candidates", candidateService.findAll());
         return "candidates/list";
     }
+
 
     @GetMapping("/create")
     public String getCreationPage(Model model) {
