@@ -21,8 +21,27 @@ public class UserController {
         this.userService = userService;
     }
 
+    /*
+    @GetMapping({"/", "/index"})
+public String getIndex(Model model, HttpSession session) {
+    var user = (User) session.getAttribute("user");
+    if (user == null) {
+        user = new User();
+        user.setName("Гость");
+    }
+    model.addAttribute("user", user);
+    return "index";
+}
+     */
+
     @GetMapping("/register")
-    public String getRegistrationPage() {
+    public String getRegistrationPage(Model model, HttpSession session) {
+        var user = (User) session.getAttribute("user");
+        if (user == null) {
+            user = new User();
+            user.setName("Гость");
+        }
+        model.addAttribute("user", user);
         return "users/register";
     }
 
